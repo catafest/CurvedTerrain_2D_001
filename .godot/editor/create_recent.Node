@@ -1,0 +1,7 @@
+CollisionShape2D
+CollisionPolygon2D
+RigidBody2D
+Polygon2D
+Line2D
+Path2D
+StaticBody2D

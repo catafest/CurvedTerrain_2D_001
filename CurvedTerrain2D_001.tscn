@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://dg4pcn2fq8cvp"]
+
+[ext_resource type="Script" path="res://Terrain.gd" id="1_uybry"]
+
+[sub_resource type="Curve2D" id="Curve2D_ey0c5"]
+bake_interval = 50.0
+_data = {
+"points": PackedVector2Array(-55, -151, 55, 151, 224, 104, -105, 46, 105, -46, 427, 111, -53, 16, 53, -16, 584, 81, -11, 28, 11, -28, 652, 8, 61, -4, -61, 4, 594, -34, 37, -26, -37, 26, 408, -56, 67, 19, -67, -19, 232, -46, 0, 0, 0, 0, 224, 104)
+}
+point_count = 8
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_yiqwe"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_v5gh7"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(309, 532)
+rotation = -0.279518
+script = ExtResource("1_uybry")
+
+[node name="Path2D" type="Path2D" parent="StaticBody2D"]
+curve = SubResource("Curve2D_ey0c5")
+
+[node name="Line2D" type="Line2D" parent="StaticBody2D"]
+
+[node name="Polygon2D" type="Polygon2D" parent="StaticBody2D"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+position = Vector2(659, 127)
+physics_material_override = SubResource("PhysicsMaterial_yiqwe")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+scale = Vector2(3, 3)
+shape = SubResource("CircleShape2D_v5gh7")
